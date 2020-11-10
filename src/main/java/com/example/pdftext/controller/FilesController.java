@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
-//@CrossOrigin("http://localhost:8081")
+@CrossOrigin
 public class FilesController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class FilesController {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://extractor-invoice-id.herokuapp.com/", "http://extractor-invoice-id.herokuapp.com/"));
+        configuration.setAllowedOrigins(Arrays.asList("https://extractor-invoice-id.herokuapp.com", "http://extractor-invoice-id.herokuapp.com"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
                 "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
