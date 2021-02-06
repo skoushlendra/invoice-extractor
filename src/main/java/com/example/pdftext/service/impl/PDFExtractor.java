@@ -21,11 +21,9 @@ public class PDFExtractor {
                 PDDocument pdfDocument = PDDocument.load(file.getInputStream());
                 String text = pdfStripper.getText(pdfDocument);
                 String[] lines = text.split("\\s+");
-                for (int j = 0; j < lines.length; j++) {
-                    String line = lines[j];
+                for (String line : lines) {
                     String[] temp1 = line.split(" ");
-                    for (int k = 0; k < temp1.length; k++) {
-                        String te = temp1[k];
+                    for (String te : temp1) {
                         char ch = te.charAt(0);
                         if (te.contains("_") && te.length() > 7 && te.length() < 12 && Character.isDigit(ch)) {
                             orderNoSet.add(te.split(",")[0]);
