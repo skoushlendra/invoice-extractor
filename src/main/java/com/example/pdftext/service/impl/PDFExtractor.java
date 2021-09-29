@@ -25,7 +25,7 @@ public class PDFExtractor {
                     String[] temp1 = line.split(" ");
                     for (String te : temp1) {
                         char ch = te.charAt(0);
-                        if (te.contains("_") && te.length() > 7 && te.length() < 12 && Character.isDigit(ch)) {
+                        if (te.contains("_") && !te.contains("-") && te.length() > 7 && te.length() < 20 && Character.isDigit(ch)) {
                             orderNoSet.add(te.split(",")[0]);
                         }
                     }
